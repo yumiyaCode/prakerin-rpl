@@ -10,8 +10,10 @@ class Kecamatan extends Model
     use HasFactory;
 
     protected $table = "kecamatans";
+    protected $fillable = ['nama_kecamatan','id_kota'];
+    public $timestamps = true;
 
-    public function kelurahan(){
-        return $this->hasMany(Kelurahan::class);
+    public function kota(){
+        return $this->belongsTo(Kota::class,'id_kota');
     }
 }

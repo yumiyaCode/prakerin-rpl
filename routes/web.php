@@ -27,3 +27,9 @@ Route::resource('provinsi',ProvinsiController::class);
 
 use App\Http\Controllers\KotaController;
 Route::resource('kota',KotaController::class);
+
+use App\Http\Controllers\KecamatanController;
+Route::resource('kecamatan',KecamatanController::class);
+
+use App\Http\Controllers\KelurahanController;
+Route::resource('kelurahan',KelurahanController::class);

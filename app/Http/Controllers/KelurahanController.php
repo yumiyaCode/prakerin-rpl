@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kelurahan;
+use App\Models\Kecamatan;
+use App\Http\Controllers\DB;
 use Illuminate\Http\Request;
 
 class KelurahanController extends Controller
@@ -20,7 +22,8 @@ class KelurahanController extends Controller
 
     public function index()
     {
-        //
+        $kelurahan = Kelurahan::with('kecamatan')->get();
+        return view('kelurahan.index',compact('kelurahan'));
     }
 
     /**
@@ -30,7 +33,8 @@ class KelurahanController extends Controller
      */
     public function create()
     {
-        //
+        $kecamatan = Kecamatan::all();
+        return view('kelurahan.create',compact('kecamatan'));
     }
 
     /**
@@ -41,7 +45,12 @@ class KelurahanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $kelurahan= new Kelurahan();
+        $kelurahan->nama_kelurahan = $request->nama_kelurahan;
+        $kelurahan->id_kecamatan = $request->id_kecamatan;
+        $kelurahan->save();
+        return redirect()->route('kelurahan.index')
+            ->with(['message'=>'Data Berhasil dibuat']);
     }
 
     /**
@@ -50,9 +59,10 @@ class KelurahanController extends Controller
      * @param  \App\Models\Kelurahan  $kelurahan
      * @return \Illuminate\Http\Response
      */
-    public function show(Kelurahan $kelurahan)
+    public function show($id)
     {
-        //
+        $kelurahan = Kelurahan::findOrFail($id);
+        return view('kelurahan.show',compact('kelurahan'));
     }
 
     /**
@@ -61,9 +71,11 @@ class KelurahanController extends Controller
      * @param  \App\Models\Kelurahan  $kelurahan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kelurahan $kelurahan)
+    public function edit($id)
     {
-        //
+        $kecamatan = Kecamatan::all();
+        $kelurahan = Kelurahan::findOrFail($id);
+        return view('kelurahan.edit',compact('kelurahan','kecamatan'));
     }
 
     /**
@@ -73,9 +85,14 @@ class KelurahanController extends Controller
      * @param  \App\Models\Kelurahan  $kelurahan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kelurahan $kelurahan)
+    public function update(Request $request, $id)
     {
-        //
+        $kelurahan = Kelurahan::findOrFail($id);
+        $kelurahan->nama_kelurahan = $request->nama_kelurahan;
+        $kelurahan->id_kecamatan = $request->id_kecamatan;
+        $kelurahan->save();
+        return redirect()->route('kelurahan.index')
+            ->with(['message'=>'Data Berhasil diedit']);
     }
 
     /**
@@ -84,8 +101,10 @@ class KelurahanController extends Controller
      * @param  \App\Models\Kelurahan  $kelurahan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kelurahan $kelurahan)
+    public function destroy($id)
     {
-        //
+        $kelurahan = Kelurahan::findOrFail($id)->delete();
+        return redirect()->route('kelurahan.index')
+                        ->with(['message1'=>'Berhasil dihapus']);
     }
 }

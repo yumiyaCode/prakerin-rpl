@@ -37,8 +37,8 @@
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item"> <a class="nav-link" href="{{route('provinsi.index')}}"> Provinsi </a></li>
                   <li class="nav-item"> <a class="nav-link" href="{{route('kota.index')}}"> Kota </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Kecamatan </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> Kelurahan </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="{{route('kecamatan.index')}}"> Kecamatan </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="{{route('kelurahan.index')}}"> Kelurahan </a></li>
                   <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> RW </a></li>
                 </ul>
               </div>

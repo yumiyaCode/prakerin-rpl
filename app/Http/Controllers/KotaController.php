@@ -103,8 +103,10 @@ class KotaController extends Controller
      * @param  \App\Models\Kota  $kota
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kota $kota)
+    public function destroy($id)
     {
-        //
+        $kota = Kota::findOrFail($id)->delete();
+        return redirect()->route('kota.index')
+                        ->with(['message1'=>'Berhasil dihapus']);
     }
 }
