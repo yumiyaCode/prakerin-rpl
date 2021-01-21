@@ -10,7 +10,7 @@ class Provinsi extends Model
     use HasFactory;
 
     protected $table = "provinsis";
-    protected $fillabe = ['kode_provinsi','nama_provinsi'];
+    protected $fillable = ['kode_provinsi','nama_provinsi'];
     public $timestamps = true;
 
     public function kota(){

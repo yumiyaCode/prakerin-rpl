@@ -10,10 +10,10 @@ class Kota extends Model
     use HasFactory;
 
     protected $table = "kotas";
-    protected $fillabe = ['kode_kota','nama_kota','id_provinsi'];
+    protected $fillable = ['kode_kota','nama_kota','id_provinsi'];
     public $timestamps = true;
 
     public function provinsi(){
-        return $this->belongsTo(Provinsi::class);
+        return $this->belongsTo(Provinsi::class,'id_provinsi');
     }
 }

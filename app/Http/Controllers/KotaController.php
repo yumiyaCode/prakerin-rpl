@@ -60,9 +60,10 @@ class KotaController extends Controller
      * @param  \App\Models\Kota  $kota
      * @return \Illuminate\Http\Response
      */
-    public function show(Kota $kota)
+    public function show($id)
     {
-        //
+        $kota = Kota::findOrFail($id);
+        return view('kota.show',compact('kota'));
     }
 
     /**
@@ -71,9 +72,11 @@ class KotaController extends Controller
      * @param  \App\Models\Kota  $kota
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kota $kota)
+    public function edit($id)
     {
-        //
+        $provinsi = Provinsi::all();
+        $kota = Kota::findOrFail($id);
+        return view('kota.edit',compact('kota','provinsi'));
     }
 
     /**
@@ -83,9 +86,15 @@ class KotaController extends Controller
      * @param  \App\Models\Kota  $kota
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kota $kota)
+    public function update(Request $request, $id)
     {
-        //
+        $kota = Kota::findOrFail($id);
+        $kota->kode_kota = $request->kode_kota;
+        $kota->nama_kota = $request->nama_kota;
+        $kota->id_provinsi = $request->id_provinsi;
+        $kota->save();
+        return redirect()->route('kota.index')
+            ->with(['message'=>'Data Berhasil diedit']);
     }
 
     /**
