@@ -10,12 +10,14 @@ class Rw extends Model
     use HasFactory;
 
     protected $table = "rws";
+    protected $fillable = ['nama_rw','id_kelurahan'];
+    public $timestamps = true;
 
     public function kelurahan(){
-        return $this->hasMany(Kelurahan::class);
+        return $this->belongsTo(Kelurahan::class,'id_kelurahan');
     }
 
     public function kasuse(){
-        return $this->hasMany(Kasuses::class);
+        return $this->hasMany(Kasuses::class,'id_kasusl');
     }
 }

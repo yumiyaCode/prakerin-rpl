@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kasuse;
+use App\Models\Rw;
+use App\Http\Controllers\DB;
 use Illuminate\Http\Request;
 
 class KasuseController extends Controller
@@ -20,7 +22,8 @@ class KasuseController extends Controller
 
     public function index()
     {
-        //
+        $kasuse = Kasuse::with('rw')->get();
+        return view('kasuse.index',compact('kasuse'));
     }
 
     /**
@@ -30,7 +33,8 @@ class KasuseController extends Controller
      */
     public function create()
     {
-        //
+        $rw = Rw::all();
+        return view('kasuse.create',compact('rw'));
     }
 
     /**
@@ -41,7 +45,15 @@ class KasuseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $kasuse= new Kasuse();
+        $kasuse->positif = $request->positif;
+        $kasuse->meninggal = $request->meninggal;
+        $kasuse->sembuh = $request->sembuh;
+        $kasuse->tanggal = $request->tanggal;
+        $kasuse->id_rw = $request->id_rw;
+        $kasuse->save();
+        return redirect()->route('kasuse.index')
+            ->with(['message'=>'Data Berhasil dibuat']);
     }
 
     /**
@@ -50,9 +62,10 @@ class KasuseController extends Controller
      * @param  \App\Models\Kasuse  $kasuse
      * @return \Illuminate\Http\Response
      */
-    public function show(Kasuse $kasuse)
+    public function show($id)
     {
-        //
+        $kasuse = Kasuse::findOrFail($id);
+        return view('kasuse.show',compact('kasuse'));
     }
 
     /**
@@ -61,9 +74,11 @@ class KasuseController extends Controller
      * @param  \App\Models\Kasuse  $kasuse
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kasuse $kasuse)
+    public function edit($id)
     {
-        //
+        $rw = Rw::all();
+        $kasuse = Kasuse::findOrFail($id);
+        return view('kasuse.edit',compact('kasuse','rw'));
     }
 
     /**
@@ -73,9 +88,17 @@ class KasuseController extends Controller
      * @param  \App\Models\Kasuse  $kasuse
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kasuse $kasuse)
+    public function update(Request $request,$id)
     {
-        //
+        $kasuse = Kasuse::findOrFail($id);
+        $kasuse->positif = $request->positif;
+        $kasuse->meninggal = $request->meninggal;
+        $kasuse->sembuh = $request->sembuh;
+        $kasuse->tanggal = $request->tanggal;
+        $kasuse->id_rw = $request->id_rw;
+        $kasuse->save();
+        return redirect()->route('kasuse.index')
+            ->with(['message'=>'Data Berhasil diubah']);
     }
 
     /**
@@ -84,8 +107,10 @@ class KasuseController extends Controller
      * @param  \App\Models\Kasuse  $kasuse
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kasuse $kasuse)
+    public function destroy($id)
     {
-        //
+        $kasuse = Kasuse::findOrFail($id)->delete();
+        return redirect()->route('kasuse.index')
+                        ->with(['message1'=>'Berhasil dihapus']);
     }
 }

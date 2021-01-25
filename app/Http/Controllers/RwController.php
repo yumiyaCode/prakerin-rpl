@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Rw;
+use App\Models\Kelurahan;
+use App\Http\Controllers\DB;
 use Illuminate\Http\Request;
 
 class RwController extends Controller
@@ -20,7 +22,8 @@ class RwController extends Controller
 
     public function index()
     {
-        //
+        $rw = Rw::with('kelurahan')->get();
+        return view('rw.index',compact('rw'));
     }
 
     /**
@@ -30,7 +33,8 @@ class RwController extends Controller
      */
     public function create()
     {
-        //
+        $kelurahan = Kelurahan::all();
+        return view('rw.create',compact('kelurahan'));
     }
 
     /**
@@ -41,7 +45,12 @@ class RwController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rw= new Rw();
+        $rw->nama_rw = $request->nama_rw;
+        $rw->id_kelurahan = $request->id_kelurahan;
+        $rw->save();
+        return redirect()->route('rw.index')
+            ->with(['message'=>'Data Berhasil dibuat']);
     }
 
     /**
@@ -50,9 +59,10 @@ class RwController extends Controller
      * @param  \App\Models\Rw  $rw
      * @return \Illuminate\Http\Response
      */
-    public function show(Rw $rw)
+    public function show($id)
     {
-        //
+        $rw = Rw::findOrFail($id);
+        return view('rw.show',compact('rw'));
     }
 
     /**
@@ -61,9 +71,11 @@ class RwController extends Controller
      * @param  \App\Models\Rw  $rw
      * @return \Illuminate\Http\Response
      */
-    public function edit(Rw $rw)
-    {
-        //
+    public function edit($id)
+    {  
+        $kelurahan = Kelurahan::all();
+        $rw = Rw::findOrFail($id);
+        return view('rw.edit',compact('rw','kelurahan'));
     }
 
     /**
@@ -73,9 +85,14 @@ class RwController extends Controller
      * @param  \App\Models\Rw  $rw
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Rw $rw)
+    public function update(Request $request, $id)
     {
-        //
+        $rw = Rw::findOrFail($id);
+        $rw->nama_rw = $request->nama_rw;
+        $rw->id_kelurahan = $request->id_kelurahan;
+        $rw->save();
+        return redirect()->route('rw.index')
+            ->with(['message'=>'Data Berhasil diedit']);
     }
 
     /**
@@ -84,8 +101,10 @@ class RwController extends Controller
      * @param  \App\Models\Rw  $rw
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Rw $rw)
+    public function destroy($id)
     {
-        //
+        $rw = Rw::findOrFail($id)->delete();
+        return redirect()->route('rw.index')
+                        ->with(['message1'=>'Berhasil dihapus']);
     }
 }

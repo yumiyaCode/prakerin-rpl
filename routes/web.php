@@ -33,3 +33,9 @@ Route::resource('kecamatan',KecamatanController::class);
 
 use App\Http\Controllers\KelurahanController;
 Route::resource('kelurahan',KelurahanController::class);
+
+use App\Http\Controllers\RwController;
+Route::resource('rw',RwController::class);
+
+use App\Http\Controllers\KasuseController;
+Route::resource('kasuse',KasuseController::class);
