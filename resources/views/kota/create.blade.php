@@ -13,8 +13,12 @@
                    <div class="form-group">
                     <div class="mb-12>
                         <label for="exampleInputEmail1" class="form-label">Kode Kota</label>
-                        <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="kode_kota"
-                        required>
+                        <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="kode_kota">
+
+                        @if($errors->has('kode_kota'))
+                            <span class="text-danger">{{$errors->first('kode_kota')}}</span>
+                        @endif
+
                     </div>
                      </div>
                      <div class="form-group">
@@ -28,8 +32,12 @@
                       <div class="form-group">
                     <div class="mb-12>
                         <label for="exampleInputPassword1" class="form-label">Kota</label>
-                        <input type="text" class="form-control" id="exampleInputPassword1" name="nama_kota"
-                        required>
+                        <input type="text" class="form-control" id="exampleInputPassword1" name="nama_kota">
+
+                        @if($errors->has('nama_provinsi'))
+                            <span class="text-danger">{{$errors->first('nama_provinsi')}}</span>
+                        @endif
+
                     </div>
                      </div>
                     <div class="form-group">

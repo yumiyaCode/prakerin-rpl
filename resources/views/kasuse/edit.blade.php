@@ -11,6 +11,21 @@
                 <form  action="{{route('kasuse.update',$kasuse->id)}}" method="post">
                 <input type="hidden" name="_method" value="PUT">
                     @csrf
+                    @livewireStyles
+
+                        @livewire('tracking')
+
+                        @livewireScripts
+
+                        <hr color="blue">
+                        <h2 class="text-center" style="color:violet">
+                        <b>
+                            <i>
+                            Edit Status Kasus
+                            </i>
+                        </b>
+                        </h2>
+                    <hr color="blue">
                      <div class="form-group">
                         <label for="">RW</label>
                         <select name="id_rw" class="form-control" required>

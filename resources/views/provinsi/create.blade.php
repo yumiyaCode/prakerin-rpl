@@ -11,17 +11,26 @@
                 <form  action="{{route('provinsi.store')}}" method="post">
                     @csrf
                    <div class="form-group">
-                    <div class="mb-12>
+                    <div class="mb-12 mb-2>
                         <label for="exampleInputEmail1" class="form-label">Kode Provinsi</label>
-                        <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="kd_prov"
-                        required>
+                        <input type="number" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" name="kode_provinsi">
+
+                        @if($errors->has('kode_provinsi'))
+                            <span class="text-danger">{{$errors->first('kode_provinsi')}}</span>
+                        @endif
+
                     </div>
                      </div>
                       <div class="form-group">
                     <div class="mb-12>
                         <label for="exampleInputPassword1" class="form-label">Provinsi</label>
-                        <input type="text" class="form-control" id="exampleInputPassword1" name="nm_prov"
-                        required>
+                        <input type="text" class="form-control" id="exampleInputPassword1" name="nama_provinsi">
+
+                        @if($errors->has('nama_provinsi'))
+                            <span class="text-danger">{{$errors->first('nama_provinsi')}}</span>
+                        @endif
+
                     </div>
                      </div>
                     <div class="form-group">

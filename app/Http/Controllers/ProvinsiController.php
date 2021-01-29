@@ -41,11 +41,24 @@ class ProvinsiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($request)
+    public function store(Request $request)
     {
+        $request->validate([
+            'kode_provinsi' => 'required|max:4|unique:provinsis',
+            'nama_provinsi' => 'required|unique:provinsis'
+
+        ],
+        [
+            'kode_provinsi.required' => 'Kode Harap Diisi!',
+            'kode_provinsi.max' => 'Kode Max 4 Digit',
+            'kode_provinsi.unique' => 'Kode Sudah Terpakai',
+            'nama_provinsi.required' => 'Nama Provinsi Harap Diisi!',
+            'nama_provinsi.unique' => 'Nama Sudah Terpakai'
+
+        ]);
         $provinsi = new Provinsi();
-        $provinsi->kode_provinsi = $request->kd_prov;
-        $provinsi->nama_provinsi = $request->nm_prov;
+        $provinsi->kode_provinsi = $request->kode_provinsi;
+        $provinsi->nama_provinsi = $request->nama_provinsi;
         $provinsi->save();
         return redirect()->route('provinsi.index')
                         ->with(['message'=>'provinsi Berhasil dibuat']);

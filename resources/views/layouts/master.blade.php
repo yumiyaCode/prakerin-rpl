@@ -8,6 +8,9 @@
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{asset('assets/vendors/mdi/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendors/css/vendor.bundle.base.css')}}">
+    <!-- data table -->
+    <link rel="stylesheet" href="{{asset('assets/css/dataTables.bootstrap4.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}"/>
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
@@ -43,13 +46,16 @@
                   </li>
                 </ul>
               </nav>
+              
             </div>
            
         @yield('content')
           
          
           <!-- content-wrapper ends -->
+        
           <!-- partial:partials/_footer.html -->
+          
           @include('layouts.components.footer')
           <!-- partial -->
         </div>
@@ -57,7 +63,9 @@
       </div>
       <!-- page-body-wrapper ends -->
     </div>
+    
     <!-- container-scroller -->
+    
     <!-- plugins:js -->
     <script src="{{asset('assets/vendors/js/vendor.bundle.base.js')}}"></script>
     <!-- endinject -->
@@ -73,5 +81,12 @@
     <script src="{{asset('assets/js/dashboard.js')}}"></script>
     <script src="{{asset('assets/js/todolist.js')}}"></script>
     <!-- End custom js for this page -->
+    <!-- data table -->
+    <script src="{{asset('assets/js/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/js/bootstrap.bundle.js')}}"></script>
+    <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery-3.3.1.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.dataTables.min.js')}}"></script> 
+    <script src="{{asset('assets/js/dataTables.bootstrap4.min.js')}}"></script>
   </body>
 </html>

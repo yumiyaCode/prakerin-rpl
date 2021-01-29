@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Rw;
-use App\Models\Kelurahan;
-use App\Http\Controllers\DB;
+use App\Models\Track;
 use Illuminate\Http\Request;
 
-class RwController extends Controller
+class Tracking extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,15 +13,10 @@ class RwController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
-        $rw = Rw::with('kelurahan')->get();
-        return view('rw.index',compact('rw'));
+        $klocal = Tracking::with('rw.kelurahan.kecamatan.kota.provinsi')->get();
+        return view('kasuse.index', compact('klocal'));
     }
 
     /**

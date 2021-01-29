@@ -43,6 +43,7 @@
                   <li class="nav-item"> <a class="nav-link" href="{{route('kasuse.index')}}"> Kasus </a></li>
                 </ul>
               </div>
+             
             </li>
         </nav>
 

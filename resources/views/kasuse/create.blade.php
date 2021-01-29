@@ -10,6 +10,22 @@
                 <div class="card-body">
                 <form  action="{{route('kasuse.store')}}" method="post">
                     @csrf
+
+                    @livewireStyles
+
+                        @livewire('tracking')
+                  
+                   @livewireScripts
+                   <hr color="blue">
+                        <h2 class="text-center" style="color:violet">
+                        <b>
+                            <i>
+                            Status Kasus
+                            </i>
+                        </b>
+                        </h2>
+                    <hr color="blue">
+
                      <div class="form-group">
                         <label for="">RW</label>
                         <select name="id_rw" class="form-control" required>
@@ -22,28 +38,40 @@
                     <div class="mb-12>
                         <label for="exampleInputPassword1" class="form-label">Positif</label>
                         <input type="number" class="form-control" id="exampleInputPassword1" name="positif"
-                        required>
+                        >
+                        @if($errors->has('positif'))
+                            <span class="text-danger">{{$errors->first('positif')}}</span>
+                        @endif
                     </div>
                      </div>
                      <div class="form-group">
                     <div class="mb-12>
                         <label for="exampleInputPassword1" class="form-label">Sembuh</label>
                         <input type="number" class="form-control" id="exampleInputPassword1" name="sembuh"
-                        required>
+                        >
+                        @if($errors->has('sembuh'))
+                            <span class="text-danger">{{$errors->first('sembuh')}}</span>
+                        @endif
                     </div>
                      </div>
                      <div class="form-group">
                     <div class="mb-12>
                         <label for="exampleInputPassword1" class="form-label">Meninggal</label>
                         <input type="number" class="form-control" id="exampleInputPassword1" name="meninggal"
-                        required>
+                        >
+                        @if($errors->has('meninggal'))
+                            <span class="text-danger">{{$errors->first('meninggal')}}</span>
+                        @endif
                     </div>
                      </div>
                      <div class="form-group">
                     <div class="mb-12>
                         <label for="exampleInputPassword1" class="form-label">Tanggal</label>
                         <input type="date" class="form-control" id="exampleInputPassword1" name="tanggal"
-                        required>
+                        >
+                        @if($errors->has('tanggal'))
+                            <span class="text-danger">{{$errors->first('tanggal')}}</span>
+                        @endif
                     </div>
                      </div>
                     <div class="form-group">

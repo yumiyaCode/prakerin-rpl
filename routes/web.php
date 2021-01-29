@@ -39,3 +39,5 @@ Route::resource('rw',RwController::class);
 
 use App\Http\Controllers\KasuseController;
 Route::resource('kasuse',KasuseController::class);
+
+Route::view('city','livewire.home');

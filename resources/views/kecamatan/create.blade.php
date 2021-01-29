@@ -21,8 +21,12 @@
                       <div class="form-group">
                     <div class="mb-12>
                         <label for="exampleInputPassword1" class="form-label">Kecamatan</label>
-                        <input type="text" class="form-control" id="exampleInputPassword1" name="nama_kecamatan"
-                        required>
+                        <input type="text" class="form-control" id="exampleInputPassword1" name="nama_kecamatan">
+
+                        @if($errors->has('nama_kecamatan'))
+                            <span class="text-danger">{{$errors->first('nama_kecamatan')}}</span>
+                        @endif
+
                     </div>
                      </div>
                     <div class="form-group">
