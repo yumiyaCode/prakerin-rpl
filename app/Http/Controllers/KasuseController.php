@@ -22,7 +22,7 @@ class KasuseController extends Controller
 
     public function index()
     {
-        $kasuse = Kasuse::with('rw')->get();
+        $kasuse = Kasuse::with('rw.kelurahan.kecamatan.kota.provinsi')->get();
         return view('kasuse.index',compact('kasuse'));
     }
 
@@ -108,6 +108,22 @@ class KasuseController extends Controller
      */
     public function update(Request $request,$id)
     {
+        $request->validate([
+            'positif' => 'required',
+            'meninggal' => 'required',
+            'sembuh' => 'required',
+            'tanggal' => 'required'
+            
+
+        ],
+        [
+            'positif.required' => 'Harap Diisi!',
+            'meninggal.required' => 'Harap Diisi!',
+            'sembuh.required' => 'Harap Diisi!',
+            'tanggal.required' => 'Tanggal Harap Diisi!',
+           
+
+        ]);
         $kasuse = Kasuse::findOrFail($id);
         $kasuse->positif = $request->positif;
         $kasuse->meninggal = $request->meninggal;

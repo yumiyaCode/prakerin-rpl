@@ -18,6 +18,6 @@ class Rw extends Model
     }
 
     public function kasuse(){
-        return $this->hasMany(Kasuses::class,'id_kasusl');
+        return $this->hasMany(Kasuses::class,'id_rw');
     }
 }

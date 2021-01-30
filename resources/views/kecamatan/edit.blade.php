@@ -24,7 +24,10 @@
                     <div class="mb-12>
                         <label for="exampleInputPassword1" class="form-label">kecamatan</label>
                         <input type="text" class="form-control" id="exampleInputPassword1" name="nama_kecamatan"
-                        value="{{$kecamatan->nama_kecamatan}}" required>
+                        value="{{$kecamatan->nama_kecamatan}}">
+                        @if($errors->has('nama_kecamatan'))
+                            <span class="text-danger">{{$errors->first('nama_kecamatan')}}</span>
+                        @endif
                     </div>
                      </div>
                     <div class="form-group">

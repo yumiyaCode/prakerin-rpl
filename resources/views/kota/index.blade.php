@@ -42,9 +42,9 @@
                                 <td><form action="{{route('kota.destroy',$data->id)}}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <a href="{{route('kota.show',$data->id)}}" class="float-right btn btn-outline-primary"> Lihat</a>
-                                    <a href="{{route('kota.edit',$data->id)}}" class="float-right btn btn-outline-success">   Edit </a>
-                                    <button type="submit" class="float-right btn btn-outline-danger" onclick="return confirm('Yakin Hapus?')">Hapus</button>
+                                    <a href="{{route('kota.show',$data->id)}}" class=" btn btn-outline-primary"> Lihat</a>
+                                    <a href="{{route('kota.edit',$data->id)}}" class=" btn btn-outline-success">   Edit </a>
+                                    <button type="submit" class=" btn btn-outline-danger" onclick="return confirm('Yakin Hapus?')">Hapus</button>
                                 </form>
                                 </td>
                             </tr>

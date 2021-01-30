@@ -97,6 +97,17 @@ class KelurahanController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $request->validate([
+            'nama_kelurahan' => 'required|unique:kelurahans'
+
+        ],
+        [
+            'nama_kelurahan.required' => 'Nama kelurahan Harap Diisi!',
+            'nama_kelurahan.unique' => 'Nama Sudah Terpakai'
+
+        ]);
+
         $kelurahan = Kelurahan::findOrFail($id);
         $kelurahan->nama_kelurahan = $request->nama_kelurahan;
         $kelurahan->id_kecamatan = $request->id_kecamatan;

@@ -1,11 +1,12 @@
-<nav class="sidebar sidebar-offcanvas" id="sidebar">
-          <ul class="nav">
-            <li class="nav-item nav-profile">
+  <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <ul class="nav">
+
+      <li class="nav-item nav-profile">
               <a href="#" class="nav-link">
                 <div class="nav-profile-image">
                   <img src="{{asset('assets/images/faces/face2.jpg')}}" alt="profile">
                   <span class="login-status online"></span>
-                  <!--change to offline or busy as needed-->
+             
                 </div>
                 <div class="nav-profile-text d-flex flex-column">
                   <span class="font-weight-bold mb-2">   {{ Auth::user()->name }}</span>
@@ -45,6 +46,13 @@
               </div>
              
             </li>
-        </nav>
+</ul>
 
- 
+</nav>
+         
+         
+     
+
+
+
+     

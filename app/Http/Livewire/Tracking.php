@@ -8,6 +8,7 @@ use App\Models\Kota;
 use App\Models\Kecamatan;
 use App\Models\Kelurahan;
 use App\Models\Rw;
+use App\Models\Kasuse;
 
 
 
@@ -23,10 +24,11 @@ class Tracking extends Component
     public $selectedKot = null;
     public $selectedKec = null;
     public $selectedKel = null;
+    public $selectedRw = null;
 
     
 
-    public function mount()
+    public function mount($selectedRw = null)
     {
 
     $this->provinsi = Provinsi::all();
@@ -34,6 +36,21 @@ class Tracking extends Component
     $this->kecamatan = collect();
     $this->kelurahan = collect();
     $this->rw = collect();
+    $this->selectedRw = $selectedRw;
+
+    if (!is_null($selectedRw)) {
+        $rw = Rw::with('kelurahan.kecamatan.kota.provinsi')->find($selectedRw);
+        if ($rw) {
+            $this->rw = Rw::where('id_kelurahan', $rw->id_kelurahan)->get();
+            $this->kelurahan = Kelurahan::where('id_kecamatan', $rw->kelurahan->id_kecamatan)->get();
+            $this->kecamatan = Kecamatan::where('id_kota', $rw->kelurahan->kecamatan->id_kota)->get();
+            $this->kota = Kota::where('id_provinsi', $rw->kelurahan->kecamatan->kota->id_provinsi)->get();
+            $this->selectedPro = $rw->kelurahan->kecamatan->kota->id_provinsi;
+            $this->selectedKot = $rw->kelurahan->kecamatan->id_kota;
+            $this->selectedKec = $rw->kelurahan->id_kecamatan;
+            $this->selectedKel = $rw->id_kelurahan;
+        }
+    }
     
     }
     public function render()
@@ -43,26 +60,30 @@ class Tracking extends Component
 
     public function updatedSelectedPro($provinsi)
     {
-        if(!is_null($provinsi)){
-    	$this->kota = Kota::where('id_provinsi', $provinsi)->get();
-      }
+        
+        $this->kota = Kota::where('id_provinsi', $provinsi)->get();
+       
+    
     }
 
     public function updatedSelectedKot($kota){
-        if(!is_null($kota)){
+     
             $this->kecamatan = Kecamatan::where('id_kota', $kota)->get();
-        }
+           
+  
     }
     public function updatedSelectedKec($kecamatan){
-        if(!is_null($kecamatan)){
+       
             $this->kelurahan = Kelurahan::where('id_kecamatan', $kecamatan)->get();
-        }
+          
+      
     }
 
     public function updatedSelectedKel($kelurahan){
-        if(!is_null($kelurahan)){
-            $this->rw = Rw::where('id_kelurahan', $kelurahan)->get();
-        }
+       
+    $this->rw = Rw::where('id_kelurahan', $kelurahan)->get();
+            
+        
     }
     
    
