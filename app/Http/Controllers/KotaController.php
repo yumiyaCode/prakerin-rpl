@@ -103,16 +103,14 @@ class KotaController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'kode_kota' => 'required|max:4|unique:kotas',
-            'nama_kota' => 'required|unique:kotas'
+            'kode_kota' => 'required|max:4',
+            'nama_kota' => 'required'
 
         ],
         [
             'kode_kota.required' => 'Kode Harap Diisi!',
             'kode_kota.max' => 'Kode Max 4 Digit',
-            'kode_kota.unique' => 'Kode Sudah Terpakai',
-            'nama_kota.required' => 'Nama Kota Harap Diisi!',
-            'nama_kota.unique' => 'Nama Sudah Terpakai'
+            'nama_kota.required' => 'Nama Kota Harap Diisi!'
 
         ]);
         $kota = Kota::findOrFail($id);

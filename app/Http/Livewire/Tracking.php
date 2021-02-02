@@ -74,7 +74,7 @@ class Tracking extends Component
     }
     public function updatedSelectedKec($kecamatan){
        
-            $this->kelurahan = Kelurahan::where('id_kecamatan', $kecamatan)->get();
+        $this->kelurahan = Kelurahan::where('id_kecamatan', $kecamatan)->get();
           
       
     }
@@ -85,7 +85,5 @@ class Tracking extends Component
             
         
     }
-    
-   
     
 }

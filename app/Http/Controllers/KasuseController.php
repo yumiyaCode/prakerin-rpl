@@ -57,7 +57,7 @@ class KasuseController extends Controller
             'positif.required' => 'Harap Diisi!',
             'meninggal.required' => 'Harap Diisi!',
             'sembuh.required' => 'Harap Diisi!',
-            'tanggal.required' => 'Tanggal Harap Diisi!',
+            'tanggal.required' => 'Tanggal Harap Diisi!'
            
 
         ]);
@@ -108,6 +108,23 @@ class KasuseController extends Controller
      */
     public function update(Request $request,$id)
     {
+
+        $request->validate([
+            'positif' => 'required',
+            'meninggal' => 'required',
+            'sembuh' => 'required',
+            'tanggal' => 'required'
+            
+
+        ],
+        [
+            'positif.required' => 'Harap Diisi!',
+            'meninggal.required' => 'Harap Diisi!',
+            'sembuh.required' => 'Harap Diisi!',
+            'tanggal.required' => 'Tanggal Harap Diisi!'
+           
+
+        ]);
         $request->validate([
             'positif' => 'required',
             'meninggal' => 'required',

@@ -46,12 +46,10 @@ class KelurahanController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_kelurahan' => 'required|unique:kelurahans'
-
+            'nama_kelurahan' => 'required'
         ],
         [
-            'nama_kelurahan.required' => 'Nama kelurahan Harap Diisi!',
-            'nama_kelurahan.unique' => 'Nama Sudah Terpakai'
+            'nama_kelurahan.required' => 'Nama kelurahan Harap Diisi!'
 
         ]);
 

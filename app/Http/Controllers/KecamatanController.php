@@ -99,12 +99,10 @@ class KecamatanController extends Controller
     {
 
         $request->validate([
-            'nama_kecamatan' => 'required|unique:kecamatans'
-
+            'nama_kecamatan' => 'required'
         ],
         [
-            'nama_kecamatan.required' => 'Nama kecamatan Harap Diisi!',
-            'nama_kecamatan.unique' => 'Nama Sudah Terpakai'
+            'nama_kecamatan.required' => 'Nama kecamatan Harap Diisi!'
 
         ]);
         $kecamatan= Kecamatan::findOrFail($id);

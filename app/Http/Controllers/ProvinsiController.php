@@ -99,16 +99,14 @@ class ProvinsiController extends Controller
     {
 
         $request->validate([
-            'kode_provinsi' => 'required|max:4|unique:provinsis',
-            'nama_provinsi' => 'required|unique:provinsis'
+            'kode_provinsi' => 'required|max:4',
+            'nama_provinsi' => 'required'
 
         ],
         [
             'kode_provinsi.required' => 'Kode Harap Diisi!',
             'kode_provinsi.max' => 'Kode Max 4 Digit',
-            'kode_provinsi.unique' => 'Kode Sudah Terpakai',
-            'nama_provinsi.required' => 'Nama Provinsi Harap Diisi!',
-            'nama_provinsi.unique' => 'Nama Sudah Terpakai'
+            'nama_provinsi.required' => 'Nama Provinsi Harap Diisi!'
 
         ]);
         $provinsi = Provinsi::findOrFail($id);

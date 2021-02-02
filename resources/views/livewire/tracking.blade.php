@@ -56,9 +56,7 @@
     @if (!is_null($selectedKel))
         <div class="form-group">
             <label  for="city" class="">rw</label>
-
-           
-                <select wire:model="selectedRw" class="form-control" name="">
+                <select wire:model="selectedRw" class="form-control" name="id_rw">
                     <option value="" selected>Pilih rw</option>
                     @foreach($rw as $data5)
                         <option value="{{ $data5->id }}">{{ $data5->nama_rw }}</option>
