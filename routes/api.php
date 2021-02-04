@@ -32,4 +32,19 @@ Route::post('provinsi/update/{id?}',[ProvinsiController::class,'update']);
 Route::delete('provinsi/{id?}',[ProvinsiController::class,'destroy']);
 
 Route::get('kota',[KotaController::class,'index']);
-Route::get('fire',[ApiController::class,'index']);
+
+Route::get('indonesia',[ApiController::class,'index']);
+
+Route::get('singleprov/{id?}',[ApiController::class,'create']);
+Route::get('provinsiAll',[ApiController::class,'store']);
+
+Route::get('singlekota/{id?}',[ApiController::class,'show']);
+Route::get('kotaAll',[ApiController::class,'edit']);
+
+Route::get('singlekec/{id?}',[ApiController::class,'update']);
+Route::get('kecAll',[ApiController::class,'destroy']);
+
+Route::get('singlekel/{id?}',[ApiController::class,'kelurahan']);
+Route::get('kelAll',[ApiController::class,'kelurahanA']);
+
+
