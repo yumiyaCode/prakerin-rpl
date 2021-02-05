@@ -16,77 +16,77 @@ class ProvinsiSeeder extends Seeder
     public function run()
     {
         $provinsi = [
-        	['id' => 11, 'prov_name' => "ACEH", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+        	['kode_provinsi' => 11, 'nama_provinsi' => "ACEH", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 12, 'prov_name' => "SUMATERA UTARA", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 12, 'nama_provinsi' => "SUMATERA UTARA", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 13, 'prov_name' => "SUMATERA BARAT", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 13, 'nama_provinsi' => "SUMATERA BARAT", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 14, 'prov_name' => "RIAU", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 14, 'nama_provinsi' => "RIAU", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 15, 'prov_name' => "JAMBI", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 15, 'nama_provinsi' => "JAMBI", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 16, 'prov_name' => "SUMATERA SELATAN", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 16, 'nama_provinsi' => "SUMATERA SELATAN", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 17, 'prov_name' => "BENGKULU", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 17, 'nama_provinsi' => "BENGKULU", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 18, 'prov_name' => "LAMPUNG", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 18, 'nama_provinsi' => "LAMPUNG", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 19, 'prov_name' => "KEPULAUAN BANGKA BELITUNG", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 19, 'nama_provinsi' => "KEPULAUAN BANGKA BELITUNG", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 21, 'prov_name' => "KEPULAUAN RIAU", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 21, 'nama_provinsi' => "KEPULAUAN RIAU", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 31, 'prov_name' => "DKI JAKARTA", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 31, 'nama_provinsi' => "DKI JAKARTA", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 32, 'prov_name' => "JAWA BARAT", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 32, 'nama_provinsi' => "JAWA BARAT", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 33, 'prov_name' => "JAWA TENGAH", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 33, 'nama_provinsi' => "JAWA TENGAH", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 34, 'prov_name' => "DI YOGYAKARTA", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 34, 'nama_provinsi' => "DI YOGYAKARTA", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 35, 'prov_name' => "JAWA TIMUR", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 35, 'nama_provinsi' => "JAWA TIMUR", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 36, 'prov_name' => "BANTEN", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 36, 'nama_provinsi' => "BANTEN", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 51, 'prov_name' => "BALI", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 51, 'nama_provinsi' => "BALI", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 52, 'prov_name' => "NUSA TENGGARA BARAT", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 52, 'nama_provinsi' => "NUSA TENGGARA BARAT", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 53, 'prov_name' => "NUSA TENGGARA TIMUR", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 53, 'nama_provinsi' => "NUSA TENGGARA TIMUR", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 61, 'prov_name' => "KALIMANTAN BARAT", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 61, 'nama_provinsi' => "KALIMANTAN BARAT", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 62, 'prov_name' => "KALIMANTAN TENGAH", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 62, 'nama_provinsi' => "KALIMANTAN TENGAH", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 63, 'prov_name' => "KALIMANTAN SELATAN", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 63, 'nama_provinsi' => "KALIMANTAN SELATAN", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 64, 'prov_name' => "KALIMANTAN TIMUR", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 64, 'nama_provinsi' => "KALIMANTAN TIMUR", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 65, 'prov_name' => "KALIMANTAN UTARA", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 65, 'nama_provinsi' => "KALIMANTAN UTARA", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 71, 'prov_name' => "SULAWESI UTARA", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 71, 'nama_provinsi' => "SULAWESI UTARA", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 72, 'prov_name' => "SULAWESI TENGAH", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 72, 'nama_provinsi' => "SULAWESI TENGAH", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 73, 'prov_name' => "SULAWESI SELATAN", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 73, 'nama_provinsi' => "SULAWESI SELATAN", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 74, 'prov_name' => "SULAWESI TENGGARA", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 74, 'nama_provinsi' => "SULAWESI TENGGARA", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 75, 'prov_name' => "GORONTALO", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 75, 'nama_provinsi' => "GORONTALO", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 76, 'prov_name' => "SULAWESI BARAT", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 76, 'nama_provinsi' => "SULAWESI BARAT", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 81, 'prov_name' => "MALUKU", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 81, 'nama_provinsi' => "MALUKU", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 82, 'prov_name' => "MALUKU UTARA", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 82, 'nama_provinsi' => "MALUKU UTARA", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 91, 'prov_name' => "PAPUA BARAT", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 91, 'nama_provinsi' => "PAPUA BARAT", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ],
-			['id' => 94, 'prov_name' => "PAPUA", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+			['kode_provinsi' => 94, 'nama_provinsi' => "PAPUA", 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
 ]
         ];
 
-        DB::table('provinsi')->insert($provinsi);
+        DB::table('provinsis')->insert($provinsi);
 
     }
 }
