@@ -47,4 +47,4 @@ Route::get('kecAll',[ApiController::class,'destroy']);
 Route::get('singlekel/{id?}',[ApiController::class,'kelurahan']);
 Route::get('kelAll',[ApiController::class,'kelurahanA']);
 
-
+Route::get('global',[ApiController::class,'global']);

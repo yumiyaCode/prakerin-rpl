@@ -10,6 +10,7 @@ use App\Models\Kotas;
 use App\Models\Rw;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\DB;
 
 class ApiController extends Controller
@@ -22,17 +23,17 @@ class ApiController extends Controller
     public function index()
     {
         // Total Kasus se Indonesia
-        $positif1 = DB::table('rws')
+        $positif = DB::table('rws')
         ->select('kasuses.positif','kasuses.sembuh','kasuses.meninggal')
         ->join('kasuses','rws.id','=','kasuses.id_rw')
         ->sum('kasuses.positif');
 
-        $sembuh1 = DB::table('rws')
+        $sembuh = DB::table('rws')
         ->select('kasuses.positif','kasuses.sembuh','kasuses.meninggal')
         ->join('kasuses','rws.id','=','kasuses.id_rw')
         ->sum('kasuses.sembuh');
 
-        $meninggal1 = DB::table('rws')
+        $meninggal = DB::table('rws')
         ->select('kasuses.positif','kasuses.sembuh','kasuses.meninggal')
         ->join('kasuses','rws.id','=','kasuses.id_rw')
         ->sum('kasuses.meninggal');
@@ -40,8 +41,8 @@ class ApiController extends Controller
         $res = [
             'succes' => true,
             'data' => 'Data Kasus Indonesia',
-            'Jumlah Positif' => $positif1,
-            'Jumlah Meninggal' => $meninggal1,
+            'Jumlah Positif' => $positif,
+            'Jumlah Meninggal' => $meninggal,
             'Jumlah Sembuh' => $sembuh1,
             'massage' => 'Data Berhasil ditampilkan'
 
@@ -402,4 +403,16 @@ class ApiController extends Controller
         ];
         return response()->json($res,200);
   }
+  public function global(){
+    $response = Http::get('https://api.kawalcorona.com/')->json();
+    $res = [
+        'succes' => true,
+        'data' => 'Data Kasus Global',
+        'output' => $response,
+        'massage' => 'Data Berhasil ditampilkan'
+
+    ];
+    return response()->json($res,200);
+  }
+
 }
