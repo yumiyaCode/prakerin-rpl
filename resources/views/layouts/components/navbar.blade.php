@@ -50,7 +50,7 @@
                 <span class="count-symbol bg-warning"></span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
-                <h6 class="p-3 mb-0">Messages</h6>
+                <h6 class="p-3 mb-0">Messagess</h6>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
