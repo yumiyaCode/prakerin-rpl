@@ -25,7 +25,7 @@
                     <thead>
                       <tr>
                          <th>No</th>      
-                         <th>Asal Rw</th>
+                         <th>Kelurahan</th>
                          <th>Nama Rw</th>
                          <th class="text-center">Action</th>
                        </tr>  

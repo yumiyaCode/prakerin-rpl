@@ -25,7 +25,7 @@
                     <thead>
                       <tr>
                          <th>No</th>      
-                         <th>Asal kelurahan</th>
+                         <th>Kecamatan</th>
                          <th>Nama kelurahan</th>
                          <th class="text-center">Action</th>
                        </tr>  

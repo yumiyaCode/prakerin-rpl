@@ -26,7 +26,7 @@
                       <tr>
                          <th>No</th>      
                          <th>Kode Kota</th>
-                         <th>Asal Kota</th>
+                         <th>Provinsi</th>
                          <th>Nama Kota</th>
                          <th class="text-center">Action</th>
                        </tr>  

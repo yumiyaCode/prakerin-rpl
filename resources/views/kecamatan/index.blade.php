@@ -25,7 +25,7 @@
                     <thead>
                       <tr>
                          <th>No</th>      
-                         <th>Asal Kecamatan</th>
+                         <th>Kota</th>
                          <th>Nama Kecamatan</th>
                          <th class="text-center">Action</th>
                        </tr>  

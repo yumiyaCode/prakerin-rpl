@@ -11,7 +11,7 @@
                 <form  action="{{route('rw.store')}}" method="post">
                     @csrf
                      <div class="form-group">
-                        <label for="">Asal Kelurahan</label>
+                        <label for="">Kelurahan</label>
                         <select name="id_kelurahan" class="form-control" required>
                             @foreach($kelurahan as $data)
                                 <option value="{{$data->id}}">{{$data->nama_kelurahan}}</option>

@@ -12,7 +12,7 @@
                 <input type="hidden" name="_method" value="PUT">
                     @csrf
                      <div class="form-group">
-                        <label for="">Asal kelurahan</label>
+                        <label for="">Kecamatan</label>
                         <select name="id_kecamatan" class="form-control" required>
                             @foreach($kecamatan as $data)
                             <option value="{{$data->id}}"

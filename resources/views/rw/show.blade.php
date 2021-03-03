@@ -9,7 +9,7 @@
 
                 <div class="card-body">
                      <div class="form-group">
-                        <label for="">Asal rw</label>
+                        <label for="">Kelurahan</label>
                         <input type="text" name="id_kelurahan" class="form-control" value="{{$rw->kelurahan->nama_kelurahan}}" readonly>
                     </div>
                       <div class="form-group">

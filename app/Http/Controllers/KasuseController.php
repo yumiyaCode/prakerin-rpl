@@ -46,9 +46,9 @@ class KasuseController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'positif' => 'required',
-            'meninggal' => 'required',
-            'sembuh' => 'required',
+            'positif' => 'required|min:0|integer',
+            'meninggal' => 'required|min:0|integer',
+            'sembuh' => 'required|min:0|integer',
             'tanggal' => 'required'
             
 
@@ -57,7 +57,13 @@ class KasuseController extends Controller
             'positif.required' => 'Harap Diisi!',
             'meninggal.required' => 'Harap Diisi!',
             'sembuh.required' => 'Harap Diisi!',
-            'tanggal.required' => 'Tanggal Harap Diisi!'
+            'tanggal.required' => 'Tanggal Harap Diisi!',
+            'positif.min' => 'min 0!',
+            'meninggal.min' => 'min 0!',
+            'sembuh.min' => 'min 0!',
+            'positif.integer' => 'data integer!',
+            'meninggal.integer' => 'data integer!',
+            'sembuh.integer' => 'data integer!'
            
 
         ]);
@@ -110,25 +116,9 @@ class KasuseController extends Controller
     {
 
         $request->validate([
-            'positif' => 'required',
-            'meninggal' => 'required',
-            'sembuh' => 'required',
-            'tanggal' => 'required'
-            
-
-        ],
-        [
-            'positif.required' => 'Harap Diisi!',
-            'meninggal.required' => 'Harap Diisi!',
-            'sembuh.required' => 'Harap Diisi!',
-            'tanggal.required' => 'Tanggal Harap Diisi!'
-           
-
-        ]);
-        $request->validate([
-            'positif' => 'required',
-            'meninggal' => 'required',
-            'sembuh' => 'required',
+            'positif' => 'required|min:0|integer',
+            'meninggal' => 'required|min:0|integer',
+            'sembuh' => 'required|min:0|integer',
             'tanggal' => 'required'
             
 
@@ -138,6 +128,12 @@ class KasuseController extends Controller
             'meninggal.required' => 'Harap Diisi!',
             'sembuh.required' => 'Harap Diisi!',
             'tanggal.required' => 'Tanggal Harap Diisi!',
+            'positif.min' => 'min 0!',
+            'meninggal.min' => 'min 0!',
+            'sembuh.min' => 'min 0!',
+            'positif.integer' => 'data integer!',
+            'meninggal.integer' => 'data integer!',
+            'sembuh.integer' => 'data integer!'
            
 
         ]);

@@ -46,12 +46,12 @@ class RwController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_rw' => 'required|max:3'
+            'nama_rw' => 'required|max:2'
 
         ],
         [
             'nama_rw.required' => 'Nama rw Harap Diisi!',
-            'nama_rw.max' => 'Maksimal 3 Digit!'
+            'nama_rw.max' => 'Maksimal 2 Digit!'
 
         ]);
 
@@ -98,11 +98,12 @@ class RwController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nama_rw' => 'required'
+            'nama_rw' => 'required|max:2'
 
         ],
         [
             'nama_rw.required' => 'Nama rw Harap Diisi!',
+            'nama_rw.max' => 'Maksimal 2 Digit!'
 
         ]);
         $rw = Rw::findOrFail($id);

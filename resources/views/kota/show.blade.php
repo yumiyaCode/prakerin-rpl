@@ -16,7 +16,7 @@
                     </div>
                      </div>
                      <div class="form-group">
-                        <label for="">Asal Kota</label>
+                        <label for="">Provinsi</label>
                         <input type="text" name="id_provinsi" class="form-control" value="{{$kota->provinsi->nama_provinsi}}" readonly>
                     </div>
                       <div class="form-group">

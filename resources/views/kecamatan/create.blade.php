@@ -11,7 +11,7 @@
                 <form  action="{{route('kecamatan.store')}}" method="post">
                     @csrf
                      <div class="form-group">
-                        <label for="">Asal Kota</label>
+                        <label for="">Kota</label>
                         <select name="id_kota" class="form-control" required>
                             @foreach($kota as $data)
                                 <option value="{{$data->id}}">{{$data->nama_kota}}</option>
